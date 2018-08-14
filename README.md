@@ -14,5 +14,5 @@
 - Email summary
 - Documented - logging
 
-## UI:
-Bootstrap -> formatting
+## UI
+- Bootstrap -> formatting
