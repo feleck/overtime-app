@@ -1,6 +1,17 @@
 require 'rails_helper'
 
 describe 'navigate' do
+  before do
+    @user = User.create(
+      email: 'test1@test.com',
+      password: 'asdfasdf',
+      password_confirmation: 'asdfasdf',
+      first_name: 'John',
+      last_name: 'Maklowicz'
+    )
+    login_as(@user, scope: :user)
+  end
+
   describe 'index' do
     before do
       visit posts_path
@@ -13,18 +24,17 @@ describe 'navigate' do
     it 'has a title of Posts' do
       expect(page).to have_content(/Posts/)
     end
+
+    it 'has a list of posts' do
+      post1 = Post.create(date: Date.today, rationale: 'Anything', user: @user)
+      post2 = Post.create(date: Date.today, rationale: 'Again', user: @user)
+      visit posts_path
+      expect(page).to have_content(/Anything|Again/)
+    end
   end
 
   describe 'creation' do
     before do
-      user = User.create(
-        email: 'test1@test.com',
-        password: 'asdfasdf',
-        password_confirmation: 'asdfasdf',
-        first_name: 'John',
-        last_name: 'Maklowicz'
-      )
-      login_as(user, scope: :user)
       visit new_post_path
     end
 
