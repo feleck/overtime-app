@@ -3,7 +3,7 @@
 ## Key requirements: documentation of overtime
 
 ## Models
-- Post -> date:date rationale:text
+- x Post -> date:date rationale:text
 - x User -> Devise
 - x AdminUser -> STI
 
@@ -15,8 +15,8 @@
 - Documented - logging
 
 ## UI
-- Bootstrap -> formatting
+- x Bootstrap -> formatting
 
 ## Refactor TODOS:
 - Refactor user association integration test in post_spec
-- Add full name method for users
+- x Add full name method for users
