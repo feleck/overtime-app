@@ -2,11 +2,10 @@
   <h1>Time tracker</h1>
 </div>
 <ul class="custom-nav nav nav-pills">
-  <li class="nav-item">
-    <!-- <a class="nav-link active" href="#">Home</a> -->
+  <li class="nav-item <%= active?(root_path) %>">
     <%= link_to 'Home', root_path %>
   </li>
-  <li class="nav-item">
+  <li class="nav-item <%= active?(posts_path) %>">
     <%= link_to 'Time Entries', posts_path %>
   </li>
   <li class="dropdown pull-right">
