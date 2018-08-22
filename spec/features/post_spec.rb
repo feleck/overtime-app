@@ -2,13 +2,7 @@ require 'rails_helper'
 
 describe 'navigate' do
   before do
-    @user = User.create(
-      email: 'test1@test.com',
-      password: 'asdfasdf',
-      password_confirmation: 'asdfasdf',
-      first_name: 'John',
-      last_name: 'Maklowicz'
-    )
+    @user = FactoryBot.create(:user)
     login_as(@user, scope: :user)
   end
 
@@ -26,10 +20,9 @@ describe 'navigate' do
     end
 
     it 'has a list of posts' do
-      post1 = Post.create(date: Date.today, rationale: 'Anything', user: @user)
-      post2 = Post.create(date: Date.today, rationale: 'Again', user: @user)
+      posts = FactoryBot.create_list(:post, 5)
       visit posts_path
-      expect(page).to have_content(/Anything|Again/)
+      expect(page).to have_content(/Anything|Other/)
     end
   end
 
