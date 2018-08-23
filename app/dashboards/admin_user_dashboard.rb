@@ -11,7 +11,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     posts: Field::HasMany,
     id: Field::Number,
     email: Field::String,
-    encrypted_password: Field::String,
+    password: Field::Password,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
     remember_created_at: Field::DateTime,
@@ -19,7 +19,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     type: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -30,8 +30,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :posts,
     :id,
-    :email,
-    :encrypted_password,
+    :email
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,7 +39,6 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :posts,
     :id,
     :email,
-    :encrypted_password,
     :reset_password_token,
     :reset_password_sent_at,
     :remember_created_at,
@@ -48,22 +46,18 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :last_name,
     :type,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :posts,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
+    :password,
     :first_name,
     :last_name,
-    :type,
+    :type
   ].freeze
 
   # Overwrite this method to customize how admin users are displayed
