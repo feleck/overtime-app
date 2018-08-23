@@ -11,6 +11,7 @@
 - Approval
 - SMS
 - Admin dashboard
+- Block non admin and guest users
 - Email summary
 - Documented - logging
 
