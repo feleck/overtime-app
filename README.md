@@ -3,9 +3,9 @@
 ## Key requirements: documentation of overtime
 
 ## Models
-- x Post -> date:date rationale:text
-- x User -> Devise
-- x AdminUser -> STI
+- [x] Post -> date:date rationale:text
+- [x] User -> Devise
+- [x] AdminUser -> STI
 
 ## Features
 - Approval
@@ -15,8 +15,10 @@
 - Documented - logging
 
 ## UI
-- x Bootstrap -> formatting
+- [x] Bootstrap -> formatting
+- Icons from Font Awesome
+- [x] Update the styles for forms
 
 ## Refactor TODOS:
-- x Refactor user association integration test in post_spec
-- x Add full name method for users
+- [x] Refactor user association integration test in post_spec
+- [x] Add full name method for users
