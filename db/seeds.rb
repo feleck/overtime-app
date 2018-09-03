@@ -13,6 +13,16 @@ user2 = User.create(
   last_name: 'Barret'
 )
 puts '2 users created'
+
+AdminUser.create(
+  first_name: 'Admin',
+  last_name: 'User',
+  email: 'admin@user.com',
+  password: 'asdfasdf',
+  password_confirmation: 'asdfasdf'
+)
+puts 'admin created'
+
 10.times do |post|
   Post.create(date: Date.today, rationale: "#{post} rationale content", user: user)
 end

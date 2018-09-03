@@ -55,6 +55,9 @@ GEM
       momentjs-rails (~> 2.8)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
+    administrate-field-enum (0.0.7)
+      administrate
+      rails (>= 4.2, < 6.0)
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -271,6 +274,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  administrate-field-enum
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.3, >= 3.3.7)
   bourbon
