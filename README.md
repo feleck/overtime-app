@@ -23,3 +23,4 @@
 ## Refactor TODOS:
 - [x] Refactor user association integration test in post_spec
 - [x] Add full name method for users
+- Update admin dashboard post view to show search form
