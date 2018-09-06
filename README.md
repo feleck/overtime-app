@@ -24,5 +24,6 @@
 - [x] Refactor user association integration test in post_spec
 - [x] Add full name method for users
 - [x] Update admin dashboard post view to show search form
-- Refactor posts/_form for admin user with status
+- Refactor posts\_form for admin user with status
 - Refactor admin user check in nav
+- Fix post_spec.rb:66 to not manipulate database
