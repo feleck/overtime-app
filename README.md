@@ -25,3 +25,4 @@
 - [x] Add full name method for users
 - [x] Update admin dashboard post view to show search form
 - Refactor posts/_form for admin user with status
+- Refactor admin user check in nav
