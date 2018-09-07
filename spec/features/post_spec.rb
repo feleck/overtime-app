@@ -20,9 +20,18 @@ describe 'navigate' do
     end
 
     it 'has a list of posts' do
-      posts = FactoryBot.create_list(:post, 5)
+      FactoryBot.create_list(:post, 5)
+      # TODO refactor!
+      Post.first.update(user_id: @user.id)
       visit posts_path
-      expect(page).to have_content(/Anything|Other/)
+      expect(page).to have_content(/Anything|Other|another/)
+    end
+
+    it 'has a scope so that only post creators can see their posts' do
+      FactoryBot.create_list(:post, 5)
+      FactoryBot.create(:post_form_other_user)
+      visit posts_path
+      expect(page).not_to have_content(/another/)
     end
   end
 
@@ -64,8 +73,8 @@ describe 'navigate' do
     end
 
     it 'can be edited' do
-      @post.user = @user
-      @post.save
+      # TODO refactor
+      @post.update(user_id: @user.id)
       visit edit_post_path(@post)
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'Edited content'
@@ -87,6 +96,8 @@ describe 'navigate' do
   describe 'delete' do
     it 'can be deleted' do
       @post = FactoryBot.create(:post)
+    # TODO refactor!
+      @post.update(user_id: @user.id)
       visit posts_path
       click_link("delete_#{@post.id}")
       expect(page.status_code).to eq(200)

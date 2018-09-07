@@ -26,4 +26,6 @@
 - [x] Update admin dashboard post view to show search form
 - Refactor posts\_form for admin user with status
 - Refactor admin user check in nav
-- Fix post_spec.rb:66 to not manipulate database
+- Fix post_spec.rb:24 to not manipulate database
+- Fix post_spec.rb:75 to not manipulate database
+- Fix post_spec.rb:99 to not manipulate database
