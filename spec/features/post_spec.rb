@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 describe 'navigate' do
+  let(:user) { FactoryBot.create(:user) }
+  let(:post) do
+    Post.create(date: Date.today, rationale: 'Rationale', user_id: user.id)
+  end
   before do
-    @user = FactoryBot.create(:user)
-    login_as(@user, scope: :user)
+    login_as(user, scope: :user)
   end
 
   describe 'index' do
@@ -21,8 +24,8 @@ describe 'navigate' do
 
     it 'has a list of posts' do
       FactoryBot.create_list(:post, 5)
-      # TODO refactor!
-      Post.first.update(user_id: @user.id)
+      # TODO, refactor!
+      Post.first.update(user_id: user.id)
       visit posts_path
       expect(page).to have_content(/Anything|Other|another/)
     end
@@ -68,14 +71,8 @@ describe 'navigate' do
   end
 
   describe 'edit' do
-    before do
-      @post = FactoryBot.create(:post)
-    end
-
     it 'can be edited' do
-      # TODO refactor
-      @post.update(user_id: @user.id)
-      visit edit_post_path(@post)
+      visit edit_post_path(post)
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'Edited content'
       click_on 'Save'
@@ -86,20 +83,19 @@ describe 'navigate' do
       logout(:user)
       non_authorized_user = FactoryBot.create(:non_authorized_user)
       login_as(non_authorized_user, scope: :user)
-
-      visit edit_post_path(@post)
-
+      visit edit_post_path(post)
       expect(current_path).to eq(root_path)
     end
   end
 
   describe 'delete' do
     it 'can be deleted' do
-      @post = FactoryBot.create(:post)
-    # TODO refactor!
-      @post.update(user_id: @user.id)
+      logout(:user)
+      deleting_user = FactoryBot.create(:user)
+      login_as(deleting_user, scope: :user)
+      post_to_delete = Post.create(date: Date.today, rationale: 'Dationale', user_id: deleting_user.id)
       visit posts_path
-      click_link("delete_#{@post.id}")
+      click_link("delete_#{post.id}")
       expect(page.status_code).to eq(200)
     end
   end
