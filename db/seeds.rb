@@ -24,11 +24,21 @@ AdminUser.create(
 puts 'admin created'
 
 10.times do |post|
-  Post.create(date: Date.today, rationale: "#{post} rationale content", user: user)
+  Post.create(
+    date: Date.today,
+    rationale: "#{post} rationale content",
+    user: user,
+    overtime_request: 2.5
+  )
 end
 puts '10 Posts have been created'
 
 10.times do |post|
-  Post.create(date: Date.today, rationale: "#{post} rationale content", user: user2)
+  Post.create(
+    date: Date.today,
+    rationale: "#{post} rationale content",
+    user: user2,
+    overtime_request: 1.4
+  )
 end
 puts '10 Posts have been created'

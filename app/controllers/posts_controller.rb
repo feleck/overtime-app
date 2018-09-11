@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:date, :rationale, :status)
+    params.require(:post).permit(:date, :rationale, :status, :overtime_request)
     # .merge(user: current_user) - not using it, because after editin by admin - creatror is also changeging
   end
 
