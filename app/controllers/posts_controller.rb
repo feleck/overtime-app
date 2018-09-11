@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
     if @post.save
       redirect_to @post, notice: 'Your post was created sucessfully!'
     else
@@ -41,7 +42,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:date, :rationale, :status).merge(user: current_user)
+    params.require(:post).permit(:date, :rationale, :status)
+    # .merge(user: current_user) - not using it, because after editin by admin - creatror is also changeging
   end
 
   def set_post
