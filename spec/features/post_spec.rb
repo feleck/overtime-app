@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'navigate' do
   let(:user) { FactoryBot.create(:user) }
   let(:post) do
-    Post.create(date: Date.today, rationale: 'Rationale', user_id: user.id)
+    Post.create(date: Date.today, rationale: 'Yet another', user_id: user.id)
   end
   before do
     login_as(user, scope: :user)
@@ -23,8 +23,9 @@ describe 'navigate' do
     end
 
     it 'has a list of posts' do
-      FactoryBot.create_list(:post, 5)
-      # TODO, refactor!
+      FactoryBot.create(:post)
+      FactoryBot.create(:second_post)
+      # TODO, Refactor!
       Post.first.update(user_id: user.id)
       visit posts_path
       expect(page).to have_content(/Anything|Other|another/)
@@ -32,7 +33,10 @@ describe 'navigate' do
 
     it 'has a scope so that only post creators can see their posts' do
       FactoryBot.create_list(:post, 5)
-      FactoryBot.create(:post_form_other_user)
+      other_user_post = FactoryBot.create(:post_form_other_user)
+      non_authorized_user = FactoryBot.create(:non_authorized_user)
+      other_user_post.update(user_id: non_authorized_user.id)
+      # TODO, Refactor
       visit posts_path
       expect(page).not_to have_content(/another/)
     end
@@ -95,7 +99,7 @@ describe 'navigate' do
       login_as(deleting_user, scope: :user)
       post_to_delete = Post.create(date: Date.today, rationale: 'Dationale', user_id: deleting_user.id)
       visit posts_path
-      click_link("delete_#{post.id}")
+      click_link("delete_#{post_to_delete.id}")
       expect(page.status_code).to eq(200)
     end
   end
