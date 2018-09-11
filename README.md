@@ -6,6 +6,7 @@
 - [x] Post -> date:date rationale:text
 - [x] User -> Devise
 - [x] AdminUser -> STI
+- AuditLog
 
 ## Features
 - Approval
@@ -17,7 +18,8 @@
 
 ## UI
 - [x] Bootstrap -> formatting
-- Icons from Font Awesome
+- [x] Icons for glyphiconsfrom
+-  Font Awesome?
 - [x] Update the styles for forms
 
 ## Refactor TODOS:
