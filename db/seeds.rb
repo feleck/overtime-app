@@ -3,14 +3,16 @@ user = User.create(
   password: 'asdfasdf',
   password_confirmation: 'asdfasdf',
   first_name: 'John',
-  last_name: 'Maklowicz'
+  last_name: 'Maklowicz',
+  phone: '+48732230324'
 )
 user2 = User.create(
   email: 'test2@test.com',
   password: 'asdfasdf',
   password_confirmation: 'asdfasdf',
   first_name: 'Sid',
-  last_name: 'Barret'
+  last_name: 'Barret',
+  phone: '+48732230324'
 )
 puts '2 users created'
 
@@ -19,7 +21,8 @@ AdminUser.create(
   last_name: 'User',
   email: 'admin@user.com',
   password: 'asdfasdf',
-  password_confirmation: 'asdfasdf'
+  password_confirmation: 'asdfasdf',
+  phone: '+48732230324'
 )
 puts 'admin created'
 
