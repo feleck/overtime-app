@@ -30,7 +30,7 @@
 - [x] Refactor admin user check in nav
 - Fix post_spec.rb:28 to not manipulate database
 - Fix post_spec.rb:39 to not manipulate database
-- Integrate validation for phone attr in user
-  # No spaces or dashes
-  # exactly 10 characters
-  # all characters have to be a number
+- [x] Integrate validation for phone attr in user
+  [x]  No spaces or dashes
+  [x] exactly 10 characters
+  [x] all characters have to be a number
