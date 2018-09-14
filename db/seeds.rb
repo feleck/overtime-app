@@ -45,3 +45,13 @@ puts '10 Posts have been created'
   )
 end
 puts '10 Posts have been created'
+
+
+10.times do |audit_log|
+  AuditLog.create(
+    start_date: (Date.today - 6.days),
+    user: user2,
+    status: 0
+  )
+end
+puts '10 Audit logs have been created!'
