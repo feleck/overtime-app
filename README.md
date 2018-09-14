@@ -10,7 +10,7 @@
 
 ## Features
 - Approval
-- SMS
+- SMS Sending -> integrate with heoku scheduler
 - [x] Admin dashboard
 - [x] Block non admin and guest users
 - Email summary
