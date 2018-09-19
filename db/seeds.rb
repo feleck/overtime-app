@@ -27,7 +27,7 @@ AdminUser.create(
 )
 puts 'admin created'
 
-10.times do |post|
+30.times do |post|
   Post.create(
     date: Date.today,
     rationale: "#{post} rationale content",
@@ -35,9 +35,9 @@ puts 'admin created'
     overtime_request: 2.5
   )
 end
-puts '10 Posts have been created'
+puts '30 Posts have been created'
 
-10.times do |post|
+20.times do |post|
   Post.create(
     date: Date.today,
     rationale: "#{post} rationale content",
@@ -45,14 +45,14 @@ puts '10 Posts have been created'
     overtime_request: 1.4
   )
 end
-puts '10 Posts have been created'
+puts '20 Posts have been created'
 
 
-10.times do |audit_log|
+20.times do |audit_log|
   AuditLog.create(
     user: user2,
     status: 0,
     start_date: (Date.today - 6.days)
   )
 end
-puts '10 Audit logs have been created!'
+puts '20 Audit logs have been created!'
