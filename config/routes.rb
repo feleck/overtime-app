@@ -4,9 +4,13 @@ Rails.application.routes.draw do
     resources :posts
     resources :users
     resources :admin_users
-    root to: "posts#index"
+    root to: 'posts#index'
   end
-  resources :posts
+  resources :posts do
+    member do
+      get :approve
+    end
+  end
   devise_for :users, skip: %i[registrations]
   root to: 'static#homepage'
 end
