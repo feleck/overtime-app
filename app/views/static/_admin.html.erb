@@ -2,12 +2,15 @@
   <div class='pending-homepage row'>
     <h2>Items Pending Your Approval</h2>
     <hr>
-
     <%= render partial: 'pending_approval', locals: { pending_approvals: @pending_approvals } %>
   </div>
+  <div class='pending-homepage row'>
+    <h2>Confirmation Log</h2>
+    <hr>
+    <%= render partial: 'confirmation_log', locals: { recent_audit_itmes: @recent_audit_itmes } %>
+    <div class='clearfix'></div>
+      <hr>
+      <%= link_to 'View All Items', audit_logs_path, class: 'btn btn-primary' %>
 
-  <div class='pending-homepage'>
-    <p>aaa</p>
   </div>
-
 </div>

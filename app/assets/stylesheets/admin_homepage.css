@@ -17,6 +17,9 @@
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+.homepage-block:hover {
+  background-color: #172B63;
+}
 
 .pending-details{
   font-weight: 700;
