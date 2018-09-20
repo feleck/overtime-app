@@ -26,4 +26,6 @@
     <%= render @posts %>
   </tbody>
 </table>
-<%= paginate @posts, remote: :true %>
+<div id="paginator">
+  <%= paginate @posts, remote: :true %>
+</div>
