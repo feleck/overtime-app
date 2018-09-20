@@ -1,32 +1,13 @@
 <div class='container-fluid'>
+  <div class='pending-homepage row'>
+    <h2>Items Pending Your Approval</h2>
+    <hr>
 
-<div class='pending-homepage row'>
-  <div class='homepage-block col-md-3'>
-    <p>aaa</p>
-  </div>
-  <div class='homepage-block col-md-3'>
-    <p>aaa</p>
-  </div>
-  <div class='homepage-block col-md-3'>
-    <p>aaa</p>
-  </div>
-  <div class='homepage-block col-md-3'>
-
-    <p>aaa</p>
-  </div>
-  <div class='homepage-block col-md-3'>
-
-    <p>aaa</p>
+    <%= render partial: 'pending_approval', locals: { pending_approvals: @pending_approvals } %>
   </div>
 
-</div>
-
-<div class='pending-homepage'>
-  <p>aaa</p>
-
-</div>
-
-
-
+  <div class='pending-homepage'>
+    <p>aaa</p>
+  </div>
 
 </div>
