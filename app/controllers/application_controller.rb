@@ -1,8 +1,11 @@
 class ApplicationController < ActionController::Base
   include Pundit
   before_action :authenticate_user!
-
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+  def admin_types
+    ['AdminUser']
+  end
 
   private
 
