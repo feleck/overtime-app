@@ -20,7 +20,7 @@ puts '2 users created'
 AdminUser.create(
   first_name: 'Admin',
   last_name: 'User',
-  email: 'admin@user.com',
+  email: 'admin@mail.com',
   password: 'asdfasdf',
   password_confirmation: 'asdfasdf',
   phone: '8732230324'
@@ -47,12 +47,38 @@ puts '30 Posts have been created'
 end
 puts '20 Posts have been created'
 
-
-20.times do |audit_log|
+10.times do |audit_log|
   AuditLog.create(
     user: user2,
     status: 0,
     start_date: (Date.today - 6.days)
   )
 end
-puts '20 Audit logs have been created!'
+puts '10 Audit logs have been created!'
+
+10.times do |audit_log|
+  AuditLog.create(
+    user: user,
+    status: 0,
+    start_date: (Date.today - 6.days)
+  )
+end
+puts '10 Audit logs have been created!'
+
+10.times do |audit_log|
+  AuditLog.create(
+    user: user,
+    status: 0,
+    start_date: (Date.today - 13.days)
+  )
+end
+puts '10 Audit logs have been created!'
+
+10.times do |audit_log|
+  AuditLog.create(
+    user: user,
+    status: 0,
+    start_date: (Date.today - 20.days)
+  )
+end
+puts '10 Audit logs have been created!'
