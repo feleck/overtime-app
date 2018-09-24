@@ -27,7 +27,7 @@ AdminUser.create(
 )
 puts 'admin created'
 
-30.times do |post|
+5.times do |post|
   Post.create(
     date: Date.today,
     rationale: "#{post} Kitsch cardigan af wolf stumptown. Irony beard la croix cliche pabst affogato DIY 8-bit kinfolk PBR&B craft beer pop-up butcher put a bird on it disrupt. Vape hexagon williamsburg, authentic flannel cold-pressed wolf. ",
@@ -35,9 +35,9 @@ puts 'admin created'
     overtime_request: 2.5
   )
 end
-puts '30 Posts have been created'
+puts '5 Posts have been created'
 
-20.times do |post|
+5.times do |post|
   Post.create(
     date: Date.today,
     rationale: "#{post} Freegan polaroid gluten-free enamel pin try-hard fingerstache tousled put a bird on it shoreditch bushwick chia. Umami fashion axe twee etsy tote bag la croix lomo post-ironic microdosing food truck pickled cardigan drinking vinegar coloring book.",
@@ -45,40 +45,39 @@ puts '30 Posts have been created'
     overtime_request: 1.4
   )
 end
-puts '20 Posts have been created'
+puts '5 Posts have been created'
 
-10.times do |audit_log|
-  AuditLog.create(
-    user: user2,
-    status: 0,
-    start_date: (Date.today - 6.days)
-  )
-end
-puts '10 Audit logs have been created!'
+AuditLog.create(
+  user: user2,
+  status: 0,
+  start_date: (Date.today - 7.days)
+)
+AuditLog.create(
+  user: user2,
+  status: 0,
+  start_date: (Date.today - 14.days)
+)
 
-10.times do |audit_log|
-  AuditLog.create(
-    user: user,
-    status: 0,
-    start_date: (Date.today - 6.days)
-  )
-end
-puts '10 Audit logs have been created!'
+AuditLog.create(
+  user: user2,
+  status: 0,
+  start_date: (Date.today - 21.days)
+)
+puts '3 Audit logs for user2 have been created!'
 
-10.times do |audit_log|
-  AuditLog.create(
-    user: user,
-    status: 0,
-    start_date: (Date.today - 13.days)
-  )
-end
-puts '10 Audit logs have been created!'
-
-10.times do |audit_log|
-  AuditLog.create(
-    user: user,
-    status: 0,
-    start_date: (Date.today - 20.days)
-  )
-end
-puts '10 Audit logs have been created!'
+AuditLog.create(
+  user: user,
+  status: 0,
+  start_date: (Date.today - 7.days)
+)
+AuditLog.create(
+  user: user,
+  status: 0,
+  start_date: (Date.today - 14.days)
+)
+AuditLog.create(
+  user: user,
+  status: 0,
+  start_date: (Date.today - 21.days)
+)
+puts '3 Audit logs for user have been created!'
