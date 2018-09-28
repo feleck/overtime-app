@@ -1,4 +1,4 @@
-user = User.create(
+employee = Employee.create(
   email: 'test@test.com',
   password: 'asdfasdf',
   password_confirmation: 'asdfasdf',
@@ -46,17 +46,17 @@ AuditLog.create(
 puts '3 Audit logs for user2 have been created!'
 
 AuditLog.create(
-  user: user,
+  user: employee,
   status: 0,
   start_date: (Date.today - 7.days)
 )
 AuditLog.create(
-  user: user,
+  user: employee,
   status: 0,
   start_date: (Date.today - 14.days)
 )
 AuditLog.create(
-  user: user,
+  user: employee,
   status: 0,
   start_date: (Date.today - 21.days)
 )
@@ -66,7 +66,7 @@ puts '3 Audit logs for user have been created!'
   Post.create(
     date: Date.today,
     rationale: "#{post} Kitsch cardigan af wolf stumptown. Irony beard la croix cliche pabst affogato DIY 8-bit kinfolk PBR&B craft beer pop-up butcher put a bird on it disrupt. Vape hexagon williamsburg, authentic flannel cold-pressed wolf. ",
-    user: user,
+    user: employee,
     overtime_request: 2.5
   )
 end
