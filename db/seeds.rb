@@ -27,26 +27,6 @@ AdminUser.create(
 )
 puts 'admin created'
 
-5.times do |post|
-  Post.create(
-    date: Date.today,
-    rationale: "#{post} Kitsch cardigan af wolf stumptown. Irony beard la croix cliche pabst affogato DIY 8-bit kinfolk PBR&B craft beer pop-up butcher put a bird on it disrupt. Vape hexagon williamsburg, authentic flannel cold-pressed wolf. ",
-    user: user,
-    overtime_request: 2.5
-  )
-end
-puts '5 Posts have been created'
-
-5.times do |post|
-  Post.create(
-    date: Date.today,
-    rationale: "#{post} Freegan polaroid gluten-free enamel pin try-hard fingerstache tousled put a bird on it shoreditch bushwick chia. Umami fashion axe twee etsy tote bag la croix lomo post-ironic microdosing food truck pickled cardigan drinking vinegar coloring book.",
-    user: user2,
-    overtime_request: 1.4
-  )
-end
-puts '5 Posts have been created'
-
 AuditLog.create(
   user: user2,
   status: 0,
@@ -81,3 +61,23 @@ AuditLog.create(
   start_date: (Date.today - 21.days)
 )
 puts '3 Audit logs for user have been created!'
+
+5.times do |post|
+  Post.create(
+    date: Date.today,
+    rationale: "#{post} Kitsch cardigan af wolf stumptown. Irony beard la croix cliche pabst affogato DIY 8-bit kinfolk PBR&B craft beer pop-up butcher put a bird on it disrupt. Vape hexagon williamsburg, authentic flannel cold-pressed wolf. ",
+    user: user,
+    overtime_request: 2.5
+  )
+end
+puts '5 Posts have been created'
+
+5.times do |post|
+  Post.create(
+    date: Date.today,
+    rationale: "#{post} Freegan polaroid gluten-free enamel pin try-hard fingerstache tousled put a bird on it shoreditch bushwick chia. Umami fashion axe twee etsy tote bag la croix lomo post-ironic microdosing food truck pickled cardigan drinking vinegar coloring book.",
+    user: user2,
+    overtime_request: 1.4
+  )
+end
+puts '5 Posts have been created'
