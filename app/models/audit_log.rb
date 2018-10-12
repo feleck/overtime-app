@@ -8,6 +8,8 @@ class AuditLog < ApplicationRecord
 
   before_update :set_end_date, if: :confirmed?
 
+  scope :by_start_date, -> { order('start_date DESC') }
+
   private
 
   def set_defaults
