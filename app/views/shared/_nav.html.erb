@@ -5,15 +5,12 @@
 <% if current_user %>
   <ul class="custom-nav nav nav-tabs">
     <li class="nav-item <%= active?(root_path) %>">
-      <%= link_to 'Home', root_path %>
+      <%= link_to '', root_path, class: 'glyphicon glyphicon-home' %>
     </li>
     <li class="nav-item <%= active?(posts_path) %>">
-      <%= link_to 'Time Entries', posts_path %>
+      <%= link_to 'Entries', posts_path %>
     </li>
-
-    <!-- TODO probably refactor -->
     <%= render 'shared/audit_log_tab' if policy(AuditLog).index? %>
-
     <li class="nav-item <%= active?(new_post_path) %>">
       <%= link_to 'Request Overtime', new_post_path, id: 'new_post_from_nav' %>
     </li>
