@@ -21,6 +21,16 @@ FactoryBot.define do
     phone { '732230324' }
   end
 
+  factory :employee, class: User do
+    first_name { 'Towarzysz' }
+    last_name { 'Józef' }
+    email { generate :email }
+    password { 'asdfasdf' }
+    password_confirmation { 'asdfasdf' }
+    phone { '1234567890' }
+    type { 'Employee' }
+  end
+
   factory :admin_user, class: AdminUser do
     first_name { 'Mike' }
     last_name { 'Brown' }
