@@ -4,7 +4,9 @@ employee = Employee.create(
   password_confirmation: 'asdfasdf',
   first_name: 'John',
   last_name: 'Maklowicz',
-  phone: '8732230324'
+  phone: '8732230324',
+  ssn: 1243,
+  company: 'ARR Paolo'
 )
 
 user2 = User.create(
@@ -13,7 +15,9 @@ user2 = User.create(
   password_confirmation: 'asdfasdf',
   first_name: 'Sid',
   last_name: 'Barret',
-  phone: '8732230324'
+  phone: '8732230324',
+  ssn: 1243,
+  company: 'ARR Paolo'
 )
 puts '2 users created'
 
@@ -23,7 +27,9 @@ AdminUser.create(
   email: 'admin@mail.com',
   password: 'asdfasdf',
   password_confirmation: 'asdfasdf',
-  phone: '8732230324'
+  phone: '8732230324',
+  ssn: 1243,
+  company: 'ARR Paolo'
 )
 puts 'admin created'
 

@@ -10,6 +10,8 @@ FactoryBot.define do
     password { 'asdfasdf' }
     password_confirmation { 'asdfasdf' }
     phone { '0732230324' }
+    ssn { 1112 }
+    company { 'ABC comp' }
   end
 
   factory :second_user, class: User do
@@ -19,6 +21,8 @@ FactoryBot.define do
     password { 'asdfasdf' }
     password_confirmation { 'asdfasdf' }
     phone { '732230324' }
+    ssn { 1121 }
+    company { 'ABC comp' }
   end
 
   factory :employee, class: User do
@@ -29,6 +33,8 @@ FactoryBot.define do
     password_confirmation { 'asdfasdf' }
     phone { '1234567890' }
     type { 'Employee' }
+    ssn { 1131 }
+    company { 'ABC comp' }
   end
 
   factory :admin_user, class: AdminUser do
@@ -38,6 +44,8 @@ FactoryBot.define do
     password { 'asdfasdf' }
     password_confirmation { 'asdfasdf' }
     phone { '0732230324' }
+    ssn { 1141 }
+    company { 'ABC comp' }
   end
 
   factory :non_authorized_user, class: User do
@@ -47,5 +55,7 @@ FactoryBot.define do
     password { 'asdfasdf' }
     password_confirmation { 'asdfasdf' }
     phone { '0732230324' }
+    ssn { 1091 }
+    company { 'PKP PLK S.A.'}
   end
 end
