@@ -73,7 +73,7 @@ puts '3 Audit logs for user have been created!'
     date: Date.today,
     rationale: "#{post} Kitsch cardigan af wolf stumptown. Irony beard la croix cliche pabst affogato DIY 8-bit kinfolk PBR&B craft beer pop-up butcher put a bird on it disrupt. Vape hexagon williamsburg, authentic flannel cold-pressed wolf. ",
     user: employee,
-    overtime_request: 2.5
+    daily_hours: 12.5
   )
 end
 puts '5 Posts have been created'
@@ -83,7 +83,7 @@ puts '5 Posts have been created'
     date: Date.today,
     rationale: "#{post} Freegan polaroid gluten-free enamel pin try-hard fingerstache tousled put a bird on it shoreditch bushwick chia. Umami fashion axe twee etsy tote bag la croix lomo post-ironic microdosing food truck pickled cardigan drinking vinegar coloring book.",
     user: user2,
-    overtime_request: 1.4
+    daily_hours: 14.5
   )
 end
 puts '5 Posts have been created'

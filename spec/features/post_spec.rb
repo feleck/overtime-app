@@ -7,7 +7,7 @@ describe 'navigate' do
       date: Date.today,
       rationale: 'Yet another',
       user_id: user.id,
-      overtime_request: 2.5
+      daily_hours: 2.5
     )
   end
   before do
@@ -69,14 +69,14 @@ describe 'navigate' do
     it 'can be created from new form page' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'Anything'
-      fill_in 'post[overtime_request]', with: 1.3
+      fill_in 'post[daily_hours]', with: 1.3
       expect{ click_on 'Save' }.to change(Post, :count).by(1)
     end
 
     it 'will have a user associated it' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'User Association'
-      fill_in 'post[overtime_request]', with: 1.3
+      fill_in 'post[daily_hours]', with: 1.3
       click_on 'Save'
       expect(User.last.posts.last.rationale).to eq('User Association')
     end
@@ -109,7 +109,7 @@ describe 'navigate' do
         date: Date.today,
         rationale: 'Dationale',
         user_id: deleting_user.id,
-        overtime_request: 5
+        daily_hours: 8
       )
       visit posts_path
       click_link("delete_#{post_to_delete.id}")
