@@ -28,12 +28,12 @@ describe 'navigate' do
     end
 
     it 'has a list of posts' do
-      FactoryBot.create(:post)
-      FactoryBot.create(:second_post)
-      # TODO, Refactor!
-      Post.first.update(user_id: user.id)
+      post
+      second_post = FactoryBot.create(:second_post)
+      second_post.update!(user_id: user.id)
       visit posts_path
-      expect(page).to have_content(/Anything|Other|another/)
+      expect(page).to have_text(post.work_performed)
+      expect(page).to have_text(second_post.work_performed)
     end
 
     it 'has a scope so that only post creators can see their posts' do
@@ -41,7 +41,7 @@ describe 'navigate' do
       other_user_post = FactoryBot.create(:post_form_other_user)
       non_authorized_user = FactoryBot.create(:non_authorized_user)
       other_user_post.update(user_id: non_authorized_user.id)
-      # TODO, Refactor
+
       visit posts_path
       expect(page).not_to have_content(/another/)
     end
