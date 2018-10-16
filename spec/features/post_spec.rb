@@ -5,7 +5,7 @@ describe 'navigate' do
   let(:post) do
     Post.create(
       date: Date.today,
-      rationale: 'Yet another',
+      work_performed: 'Yet another',
       user_id: user.id,
       daily_hours: 2.5
     )
@@ -68,17 +68,17 @@ describe 'navigate' do
 
     it 'can be created from new form page' do
       fill_in 'post[date]', with: Date.today
-      fill_in 'post[rationale]', with: 'Anything'
+      fill_in 'post[work_performed]', with: 'Anything'
       fill_in 'post[daily_hours]', with: 1.3
       expect{ click_on 'Save' }.to change(Post, :count).by(1)
     end
 
     it 'will have a user associated it' do
       fill_in 'post[date]', with: Date.today
-      fill_in 'post[rationale]', with: 'User Association'
+      fill_in 'post[work_performed]', with: 'User Association'
       fill_in 'post[daily_hours]', with: 1.3
       click_on 'Save'
-      expect(User.last.posts.last.rationale).to eq('User Association')
+      expect(User.last.posts.last.work_performed).to eq('User Association')
     end
   end
 
@@ -86,7 +86,7 @@ describe 'navigate' do
     it 'can be edited' do
       visit edit_post_path(post)
       fill_in 'post[date]', with: Date.today
-      fill_in 'post[rationale]', with: 'Edited content'
+      fill_in 'post[work_performed]', with: 'Edited content'
       click_on 'Save'
       expect(page).to have_content('Edited content')
     end
@@ -107,7 +107,7 @@ describe 'navigate' do
       login_as(deleting_user, scope: :user)
       post_to_delete = Post.create(
         date: Date.today,
-        rationale: 'Dationale',
+        work_performed: 'Dationale',
         user_id: deleting_user.id,
         daily_hours: 8
       )
